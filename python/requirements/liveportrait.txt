@@ -1,0 +1,33 @@
+# Real requirements, copied from KwaiVGI/LivePortrait's own
+# requirements_base.txt + requirements.txt (GPU/Linux/Windows variant) as
+# of the commit vendored into python/workers/liveportrait_worker/liveportrait/
+# (see that directory's requirements_upstream*.txt for the untouched
+# originals, and LICENSE — MIT).
+#
+# NOT included here: torch/torchvision/torchaudio. LivePortrait's own
+# README pins these to a specific CUDA build
+# (e.g. `pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0
+# --index-url https://download.pytorch.org/whl/cu118`) that depends on
+# YOUR GPU's CUDA version — install that manually first, matching your
+# driver, before installing the rest of this file.
+-r base.txt
+
+numpy==1.26.4
+pyyaml==6.0.1
+opencv-python==4.10.0.84
+scipy==1.13.1
+imageio==2.34.2
+lmdb==1.4.1
+tqdm==4.66.4
+rich==13.7.1
+ffmpeg-python==0.2.0
+onnx==1.16.1
+onnxruntime-gpu==1.18.0
+scikit-image==0.24.0
+albumentations==1.4.10
+matplotlib==3.9.0
+imageio-ffmpeg==0.5.1
+tyro==0.8.5
+pykalman==0.9.7
+pillow>=10.2.0
+transformers==4.38.0

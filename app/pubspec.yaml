@@ -1,0 +1,33 @@
+name: moonlight_studio
+description: Real-time AI avatar/voice transformation studio with virtual camera/microphone output.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  web_socket_channel: ^2.4.5
+  image: ^4.2.0
+  path_provider: ^2.1.3
+  file_picker: ^8.0.0
+  yaml: ^3.1.2
+  crypto: ^3.0.3
+  restart_app: ^1.3.1
+  animated_splash_screen: ^1.3.0
+  flutter_launcher_icons: ^0.14.4
+  connectivity_plus: ^7.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/branding/
+    - assets/images/

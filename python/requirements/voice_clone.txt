@@ -1,0 +1,36 @@
+# Real requirements for the vendored RVC real-time inference subset
+# (python/workers/voice_clone_worker/rvc/) — trimmed from RVC-Project's own
+# requirments_cpu_py312.txt (see rvc/requirements_upstream_cpu.txt for the
+# untouched original) to only what infer/rtrvc.py + its direct dependencies
+# actually import. The full upstream file also installs gradio/fastapi/
+# uvicorn/etc. for their own WebUI, sounddevice/matplotlib/scikit-learn for
+# their training tools — none of that is needed for our headless worker,
+# which only uses their real-time inference class.
+#
+# NOTE: the upstream file points pip at a Chinese university mirror
+# (mirrors.pku.edu.cn) as its primary index. That's presumably fine for the
+# RVC maintainers' own userbase but would be slow/unreliable for most other
+# users, so this file uses the standard PyPI + official PyTorch CPU wheel
+# index instead. Swap back to the upstream mirror yourself if you're in a
+# region where it's actually faster.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+-r base.txt
+torch==2.4.1
+torchaudio==2.4.1
+faiss-cpu>=1.13.0,<2
+librosa>=0.10.2,<0.11
+praat-parselmouth>=0.4.5,<1
+scipy>=1.13.1,<2
+transformers>=4.49.0,<4.50
+torchfcpe>=0.0.4,<0.1
+av>=15.1.0,<16
+ffmpeg-python>=0.2.0,<1
+einops>=0.8.0,<1
+
+# GPU: after installing the above, replace torch/torchaudio with a
+# CUDA-matched build per https://pytorch.org/get-started/locally/ — same
+# pattern as the other engines' requirements files. DirectML
+# (AMD/Intel GPUs on Windows) is also supported by RVC itself if you'd
+# rather use that: pip install torch-directml==0.2.5.dev240914 (Windows only,
+# matches the torch 2.4.1 family pinned above).

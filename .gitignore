@@ -1,0 +1,25 @@
+# Flutter
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/build/
+app/windows/flutter/ephemeral/
+app/.packages
+
+# Python
+python/**/__pycache__/
+python/**/*.pyc
+python/.venv/
+
+# Models (large, license-gated — never commit)
+models/**
+!models/README.md
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+#Environment Variable 
+.env
+python/workers/

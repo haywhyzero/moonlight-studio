@@ -1,0 +1,23 @@
+avatar:
+  engine: liveportrait
+  quality: balanced
+
+motion:
+  engine: mock_motion
+
+lipsync:
+  engine: none
+
+voice:
+  engine: realtime_effects
+  effect: none
+
+performance:
+  mode: auto
+  target_fps: 24
+
+virtual_camera:
+  provider: obs_virtual_camera
+
+virtual_microphone:
+  provider: virtual_audio_cable

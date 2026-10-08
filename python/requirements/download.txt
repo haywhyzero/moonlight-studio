@@ -1,0 +1,8 @@
+# Only needed to run the scripts in scripts/setup/download_*_weights.py —
+# not required for the app itself. Kept separate from the per-engine
+# requirements files since these download scripts are meant to be run
+# once, standalone, before you ever start a worker.
+huggingface_hub[cli]>=0.24
+gdown>=5.2
+requests>=2.31
+tqdm>=4.66

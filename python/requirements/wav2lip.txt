@@ -1,0 +1,25 @@
+# Real requirements, copied from Rudrabha/Wav2Lip's own requirements.txt
+# (see python/workers/wav2lip_worker/wav2lip/requirements_upstream.txt for
+# the untouched original).
+#
+# IMPORTANT LICENSE NOTE: Wav2Lip's own README states this repository
+# "can only be used for personal/research/non-commercial purposes" —
+# commercial use requires contacting the authors directly (contact info
+# in wav2lip/README section vendored — see upstream repo). If Moonlight
+# Studio's stream is ever monetized, re-check whether that counts as
+# commercial use of this specific component before shipping with it
+# enabled.
+#
+# Also note the upstream pins are old (numpy 1.17, torch 1.1.0) and may
+# not install cleanly against a modern CUDA/Python setup — several
+# community forks pin newer, compatible versions; check current GitHub
+# issues on the upstream repo before troubleshooting version conflicts
+# yourself.
+-r base.txt
+
+librosa==0.7.0
+opencv-contrib-python>=4.2.0.34
+opencv-python==4.1.0.25
+torch==1.1.0
+torchvision==0.3.0
+numba==0.48
